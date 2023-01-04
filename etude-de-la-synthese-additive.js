@@ -11,7 +11,7 @@
       r = u * 2 ** (j - 5) * k; // this is the "row" in the pattern, different channels loop at different durations
       v = r % 1; // position within the row
       z = u < 144 && // this is not too important, but wanted a clean ending for the song
-        3 ** -(v * i * k ** .5 + .005 / v) / 8 * // envelope, higher partials decay faster
+        3 ** -(v * i * k ** .5 + .003 / v) / 8 * // envelope, higher partials decay faster
         sin(
           PI * 3 * (2846666506 >> (r & 1 + u / 16 & 7) * 4 & 15) * // frequency from min7 chord (2846666506)
           [6, 6, 8, 9, 6][u & u / 32] * // i-iv-v chord progression
