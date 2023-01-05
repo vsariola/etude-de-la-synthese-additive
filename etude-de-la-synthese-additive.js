@@ -7,7 +7,7 @@
   for (j = 0; ++j < 7;) { // j goes from 1 to 6, this is the "channel"
     for (i = 1; i < 7;) { // i goes from 1 to 6, this the partial
       k = j % 3 + 1; // this is the instrument, every two channels share the same instrument
-      r = u * 2 ** (j - 5) * k; // this is the "row" in the pattern, different channels loop at different durations
+      r = u * 2 ** j * k / 32; // this is the "row" in the pattern, different channels loop at different durations
       v = r % 1; // position within the row
       z = u < 144 && // this is not too important, but wanted a clean ending for the song
         sin(
