@@ -10,6 +10,12 @@ Should be played with the following settings:
 - infix
 - 44 kHz
 
+Greets to superogue, havoc, ttg, p01, psenough, jeenio, HellMood, jobe, nesbox,
+dave84, TomCat, exoticorn, ferris, Jin X, unlord, gopher, okkie, Řrřola, hannu,
+wrighter, Dresdenboy, aldroid, baze, noby, PoroCYon, DevEd, byteobserver,
+sensenstahl, Virgill, Ped7g, gasman, LJ, ilmenit, deater, Fready, Blossom and
+everyone at the Sizecoding discord!
+
 ## Technical
 
 "Additive synthesis" of sound is traditionally defined as adding up the output
@@ -36,21 +42,22 @@ this song as having three different types of "additive synthesis":
    slowly with time.
 2) A simple melody pattern was built from the notes of a min7 chord and stored
    in an integer. The frequencies were justly tuned according to the five-limit
-   tuning. However, to keep interesting, depending on the part of the song, we
-   always pick some of the notes of the pattern, with a simple bit pattern
-   function. It doesn't quite matter which notes we pick, because whatever notes
-   of the min7 chord they are, they tend to harmonize just fine together. i-iv-v
-   chord progressions are added on top, by moving all note pitches up by a
-   perfect fourth or a perfect fifth, depending on the measure. The chord is
-   chosen based on another bit pattern function. All of this gives simple short
-   looping melodies, coming from the notes of imin7, ivmin7 or vmin7 chords. We
-   then play several versions of this melody, with varying instruments and
-   stretched to different durations in time, on top of each other. All the
-   melody loops harmonize quite nicely, as they are playing the notes of the
-   same min7 chord, and because their durations are small integer number ratios,
-   the loops also align rhytmically. This can be viewed as another type of
-   "additive synthesis", only where we add up several looping melodies, instead
-   of oscillators.[^1]
+   tuning. However, to keep things interesting, depending on the part of the
+   song, we always pick some of the notes of the pattern, based on a simple bit
+   pattern function. It doesn't quite matter which notes we pick, because
+   whatever notes of the min7 chord they are, they tend to harmonize just fine
+   together. i-iv-v chord progressions are added on top, by moving all note
+   pitches up by a perfect fourth or a perfect fifth, depending on the measure.
+   The chord is chosen based on another bit pattern function. All of this gives
+   simple short looping melodies, coming from the notes of imin7, ivmin7 or
+   vmin7 chords. Note that these chords are all from one diatonic scale. We then
+   play several versions of this melody, with varying instruments and stretched
+   to different durations in time, on top of each other. All the melody loops
+   harmonize quite nicely, as they are playing the notes of the same min7 chord,
+   and because their durations are small integer number ratios, the loops also
+   align rhytmically. This can be viewed as another type of "additive
+   synthesis", only where we add up several looping melodies, instead of
+   oscillators.[^1]
 3) Finally, there is a feedback delay effect. The result of this delay is to add
    several copies of the entire song on top of each other, each time-shifted
    (and progressively reduced in volume). If you squint really hard, you can
