@@ -77,6 +77,8 @@ this song as having three different types of "additive synthesis":
    each other, each time-shifted (and progressively reduced in volume). If you
    squint really hard, you can view this as a third type "additive synthesis".
 
+![Screenshot](screenshot.png)
+
 [^1]: I call this the "Brian Eno / P01" trick, because Brian Eno used fairly
     similar technique to compose "Ambient 1: Music for Airports" in 1978 and in
     2018, P01 used this trick to make music in his 256b javascript production
