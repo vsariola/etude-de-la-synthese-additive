@@ -16,12 +16,18 @@ wrighter, Dresdenboy, aldroid, baze, noby, PoroCYon, DevEd, byteobserver,
 sensenstahl, Virgill, Ped7g, gasman, LJ, ilmenit, deater, Fready, Blossom and
 everyone at the Sizecoding discord!
 
-Listen on the dollchan or greggman bytebeat player. Note that in the greggman
-version the delay buffer is implemented without a ring buffer, because greggman
-player does not guarantee that the function is called always in time order,
-probably due to the visuals. That fix actually saves 2 bytes, but now leaks
-memory: the delay buffer just keeps on growing all the time. But modern computer
-should not run out of memory in the duration of the song.
+Listen on the
+[dollchan](https://dollchan.net/bytebeat/#v3b64LZDLasMwEEX/RRAjjYZYsmQnaTJZFror3QotnMYF23kU2zJ5OP9epe3szuFyYe6dfZ73FXthvKft/evc8WGa+J6cF+iuePG0d0caZpmujJ8mp1B5DDSk2tjKYkNqHTZ2nidSNpvFWjwbatLr+gktNTMjNXYUIANooMWRupnGG/X1ia8KeH8Dni1tES9XxXZrgXeJlhmEZCESnQtwBRa4xJV35mlDYjzUAC0EkRoAPkZqAea5nCtl0jFavMjf/hPVUkJIjYAbXv8d1JEegguMj3lyl5i/psYzZH15/D5UH+UQ97BWK4Xs+DfO6+FcDruqHNjjBw)
+or the
+[greggman](https://greggman.com/downloads/examples/html5bytebeat/html5bytebeat.html#t=1&e=0&s=44100&bb=5d00000100fe0000000000000000141cc3a3e33cc5579210f1269c28a1abd55408d67a32dadeb3e43fb91060515a0fd17abea608175ae02b8f36f56891676427b947e46d5bfabd11b9e9761f4aebfa5c4fa6b4b49bbb9168f137ad1ebf1653bcfbe270c56fc09ca83454f571e9f13a5453f40661e6fcfb6153baf6a4cf8e206dc3d10fc99085b546fc9a8680f6dc685720dbd74428881c961c47f43ec3ec81e0b4cae1e3c6e094bcdc61284abc1f043ef0fbd1053a194aafcfe1f9d9bf14db9b37c27e4453bb9f7c1f9d16f462663746550ad52a555a6f903e3a8e37485b243aa2285f5304085ffde21240)
+bytebeat player.
+
+Note that in the greggman version the delay buffer is implemented without a ring
+buffer, because greggman player does not guarantee that the function is called
+always in time order, probably due to the visuals. That fix actually saves 2
+bytes, but now leaks memory: the delay buffer just keeps on growing all the
+time. But modern computer should not run out of memory in the duration of the
+song.
 
 ## Technical
 
