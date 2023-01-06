@@ -16,6 +16,13 @@ wrighter, Dresdenboy, aldroid, baze, noby, PoroCYon, DevEd, byteobserver,
 sensenstahl, Virgill, Ped7g, gasman, LJ, ilmenit, deater, Fready, Blossom and
 everyone at the Sizecoding discord!
 
+Listen on the dollchan or greggman bytebeat player. Note that in the greggman
+version the delay buffer is implemented without a ring buffer, because greggman
+player does not guarantee that the function is called always in time order,
+probably due to the visuals. That fix actually saves 2 bytes, but now leaks
+memory: the delay buffer just keeps on growing all the time. But modern computer
+should not run out of memory in the duration of the song.
+
 ## Technical
 
 "Additive synthesis" of sound is traditionally defined as adding up the output
@@ -58,10 +65,11 @@ this song as having three different types of "additive synthesis":
    align rhytmically. This can be viewed as another type of "additive
    synthesis", only where we add up several looping melodies, instead of
    oscillators.[^1]
-3) Finally, there is a feedback delay effect. The result of this delay is to add
-   several copies of the entire song on top of each other, each time-shifted
-   (and progressively reduced in volume). If you squint really hard, you can
-   view this as a third type "additive synthesis".
+3) Finally, there is a feedback delay effect. The delay is a ping pong delay, so
+   right channel signal appears delayed in the left channel and vice versa. The
+   result of this delay is to add several copies of the entire song on top of
+   each other, each time-shifted (and progressively reduced in volume). If you
+   squint really hard, you can view this as a third type "additive synthesis".
 
 [^1]: I call this the "Brian Eno / P01" trick, because Brian Eno used fairly
     similar technique to compose "Ambient 1: Music for Airports" in 1978 and in

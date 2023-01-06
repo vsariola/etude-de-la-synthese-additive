@@ -4,7 +4,7 @@
   // x = left channel, y = right channel
   // pull values from the delay buffer. could be undefined, so we default to 0,0
   // note the ping pong delay: left delays right, right delays left
-  [y, x] = d[m = t % 21e3] || [0, 0];
+  [y, x] = d[t - 21e3] || [0, 0];
   u = t / 134e4; // time in sections
   // the 4.5 is not too important, but I wanted a clean ending for the song
   for (j = 0; u < 4.5 & ++j < 7;) { // j goes from 1 to 6, this is the "channel"
@@ -21,7 +21,7 @@
       y += sin(n * i) * z; // right channel partials are given different weights
     }
   }
-})(), d[m] = [x / 3, y / 3]
+})(), d[t] = [x / 3, y / 3]
 
-// after minifying: 256 characters
-// (s=>{for(t||(d=[]),[y,x]=d[m=t%21e3]||[0,0],u=t/134e4,j=0;u<4.5&++j<7;)for(i=1;i<7;)k=j%3+1,r=u*2**j*k,v=r%1,z=sin(96*PI*(2846666506>>4*(r&1+2*u&7)&15)*[6,6,8,9][32*u&u&3]*i**k*u)/3**(v*i*k**.5+.003/v)/3,x+=sin(n=i++*u/3)*z,y+=sin(n*i)*z})(),d[m]=[x/3,y/3]
+// after minifying: 254 characters
+// (s=>{for(t||(d=[]),[y,x]=d[t-21e3]||[0,0],u=t/134e4,j=0;u<4.5&++j<7;)for(i=1;i<7;)k=j%3+1,r=u*2**j*k,v=r%1,z=sin(96*PI*(2846666506>>4*(r&1+2*u&7)&15)*[6,6,8,9][32*u&u&3]*i**k*u)/3**(v*i*k**.5+.003/v)/3,x+=sin(n=i++*u/3)*z,y+=sin(n*i)*z})(),d[t]=[x/3,y/3]
