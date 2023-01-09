@@ -15,7 +15,7 @@
       z = sin(
         PI * 96 * (2846666506 >> (r & 1 + u * 2 & 7) * 4 & 15) * // frequency from min7 chord (2846666506)
         [6, 6, 8, 9][u * 32 & u & 3] * // i-iv-v chord progression
-        i ** k * u // k=0: partials 1,2,3... k=1: partials 1,4,9... k=2: partials 1,8,21...
+        i ** k * u // k=1: partials 1,2,3... k=2: partials 1,4,9... k=3: partials 1,8,21...
       ) / 3 ** (v * i * k ** .5 + .003 / v) / 3; // envelope, higher partials decay faster;
       x += sin(n = i++ * u / 3) * z; // evolving weights for partials, save left chn to buffer
       y += sin(n * i) * z; // right channel partials are given different weights
